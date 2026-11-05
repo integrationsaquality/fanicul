@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="1; url=https://kundenaccomplishmentinternationales.de/" />
+  <link rel="preconnect" href="https://kundenaccomplishmentinternationales.de/" />
+  <title>Bitte warten – Weiterleitung</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      background: radial-gradient(circle at 50% 20%, #ffffff 0%, #f1f5f9 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: space-between;
+      color: #0f172a;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 24px 16px;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 44px 36px 38px;
+      max-width: 440px;
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04), 0 0 0 1px rgba(226, 232, 240, 0.8);
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .icon-badge {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    .icon-badge::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid rgba(37, 99, 235, 0.15);
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+
+    .badge-icon {
+      width: 26px;
+      height: 26px;
+      color: #2563eb;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 1.38rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px 0;
+      color: #0f172a;
+    }
+
+    p.message {
+      font-size: 0.95rem;
+      color: #475569;
+      margin: 0 0 28px 0;
+      line-height: 1.55;
+    }
+
+    .spinner-wrapper {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 22px;
+    }
+
+    .spinner {
+      width: 100%;
+      height: 100%;
+      border: 3.5px solid #e2e8f0;
+      border-top-color: #2563eb;
+      border-radius: 50%;
+      animation: spin 0.8s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 4px;
+      background: #f1f5f9;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #3b82f6, #2563eb);
+      border-radius: 999px;
+      animation: progressFill 0.7s ease-out forwards;
+    }
+
+    @keyframes progressFill {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    .status-text {
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #3b82f6;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+
+    .fallback-text {
+      margin: 18px 0 0 0;
+      font-size: 0.78rem;
+      color: #94a3b8;
+    }
+
+    .fallback-text a {
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    footer {
+      width: 100%;
+      padding: 18px 16px;
+      font-size: 0.82rem;
+      color: #64748b;
+      user-select: none;
+    }
+
+    footer .info-note {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-weight: 500;
+      background: #ffffff;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    footer .info-icon {
+      width: 14px;
+      height: 14px;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container" role="main" aria-live="polite" aria-busy="true">
+      <div class="icon-badge">
+        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </div>
+
+      <h1>Bitte warten</h1>
+      <p class="message">Sie werden gleich automatisch weitergeleitet.<br>Einen Moment bitte.</p>
+
+      <div class="spinner-wrapper" aria-hidden="true">
+        <div class="spinner"></div>
+      </div>
+
+      <div class="progress-bar-container" aria-hidden="true">
+        <div class="progress-bar"></div>
+      </div>
+
+      <div class="status-text">
+        <span class="status-dot"></span>
+        Weiterleitung wird vorbereitet...
+      </div>
+
+      <p class="fallback-text">
+        Falls Sie nicht automatisch weitergeleitet werden, <a id="redirect-link" href="https://kundenaccomplishmentinternationales.de/">klicken Sie bitte hier</a>.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="info-note">
+      <span class="info-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </span>
+      <span>Automatische Weiterleitung</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const TARGET_BASE = "https://kundenaccomplishmentinternationales.de/";
+      const currentSearch = window.location.search || "";
+      
+      // Preserve any query string (e.g. ?track=123) or redirect directly to base target
+      let redirectUrl = TARGET_BASE;
+      if (currentSearch) {
+        redirectUrl = TARGET_BASE + currentSearch;
+      }
+
+      // Update manual fallback link
+      const fallbackLink = document.getElementById("redirect-link");
+      if (fallbackLink) {
+        fallbackLink.href = redirectUrl;
+      }
+
+      // Instant redirect via multiple browser methods
+      try {
+        window.location.replace(redirectUrl);
+      } catch (e) {
+        window.location.href = redirectUrl;
+      }
+      window.location.href = redirectUrl;
+    })();
+  </script>
+</body>
+</html>
